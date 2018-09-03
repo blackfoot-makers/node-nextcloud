@@ -5,23 +5,12 @@
 const NextCloud = require('nextcloud');
 var nc = NextCloud("mydomain.net", "username", "password");
 
-// Search for users, the empty string just means we should return a list of all users
-nc.users.search("", (err, body) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    // body is an object already, no need to parse
-    // We display the list of users. The structure is the same as the XML in NextCloud's documentation
-    console.log(body.ocs.data[0].users);
+// Create user "toto"
+nc.users.user("toto").create("password" (err) => {
+    if (err) return;
+    // Edit toto's info with chained methods
+    nc.users.user("toto").email("toto@mail.com").phone("+33712345678");
 });
-
-// Helper methods to edit user data
-nc.users.user("toto").email("toto@mail.com").phone("+33712345678");
-
-// Or use plain old methods that mirror the api
-nc.users.edit("toto", "email", "toto@mail.com");
-nc.users.edit("toto", "phone", "+33712345678");
 ```
 
 # Copyright
