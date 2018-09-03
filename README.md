@@ -17,7 +17,7 @@ nc.users.search("", (err, body) => {
 });
 
 // Helper methods to edit user data
-nc.users.editUser("toto").email("toto@mail.com").phone("+33712345678");
+nc.users.user("toto").email("toto@mail.com").phone("+33712345678");
 
 // Or use plain old methods that mirror the api
 nc.users.edit("toto", "email", "toto@mail.com");
@@ -25,4 +25,4 @@ nc.users.edit("toto", "phone", "+33712345678");
 ```
 
 # Copyright
-This module was developed by [Blackfoot](https://blackfoot.io/) under the MIT License.
+This module was developed by [Blackfoot](https://blackfoot.io/) and is licensed under the MIT License.
