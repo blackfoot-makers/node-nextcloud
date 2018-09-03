@@ -1,0 +1,18 @@
+{
+  "name": "nextcloud",
+  "version": "1.0.0",
+  "description": "A node package to interact with nextcloud applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nextcloud"
+  ],
+  "author": "thomas@blackfoot.io",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
+  }
+}
