@@ -6,7 +6,7 @@ const NextCloud = require('nextcloud');
 var nc = NextCloud("mydomain.net", "username", "password");
 
 // Create user "toto"
-nc.users.user("toto").create("password" (err) => {
+nc.users.add("toto", "password", (err) => {
     if (err) return;
     // Edit toto's info with chained methods
     nc.users.user("toto").email("toto@mail.com").phone("+33712345678");
