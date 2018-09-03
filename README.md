@@ -1,5 +1,5 @@
 # nextcloud
-`nextcloud` is a node wrapper for the [nextcloud API](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/user_provisioning_api.html).
+`nextcloud` is a node wrapper for the [nextcloud API](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/user_provisioning_api.html). It's designed to be as hassle-free as possible.
 
 ```js
 const NextCloud = require('nextcloud');
@@ -11,10 +11,18 @@ nc.users.search("", (err, body) => {
         console.error(err);
         return;
     }
-    // Response is an object already, no need to parse
+    // body is an object already, no need to parse
+    // We display the list of users. The structure is the same as the XML in NextCloud's documentation
     console.log(body.ocs.data[0].users);
 });
+
+// Helper methods to edit user data
+nc.users.editUser("toto").email("toto@mail.com").phone("+33712345678");
+
+// Or use plain old methods that mirror the api
+nc.users.edit("toto", "email", "toto@mail.com");
+nc.users.edit("toto", "phone", "+33712345678");
 ```
 
-# Copyright notice
-This module was developed by the team over at [Blackfoot](https://blackfoot.io/).
+# Copyright
+This module was developed by [Blackfoot](https://blackfoot.io/) under the MIT License.
