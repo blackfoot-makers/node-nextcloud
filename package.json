@@ -1,5 +1,5 @@
 {
-  "name": "nextcloud",
+  "name": "node-nextcloud",
   "version": "0.1.1",
   "description": "A node package to interact with nextcloud applications",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "node test.js"
   },
   "keywords": [
-    "nextcloud"
+    "nextcloud", "api"
   ],
   "repository": {
     "type" : "git",
