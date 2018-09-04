@@ -21,7 +21,10 @@ nc.users.add("toto", "awesomePassword!", (err) => {
 # Methods
 
 - When a callback has a `body` parameter, it is already a JS object, you don't need to parse the XML. It is the JS equivalent of the exact XML returned by the server, including the top-level "ocs" field. Note that the xml parsing library adds a few needless arrays for most responses.
-- Some callbacks are optional, these are callbacks which take one parameter, the error. The library signifies here that the server's answer can only be either "OK" or an error message, there's no data. All codes other than "OK" throw an error, therefore if the error is null you can be sure everything is ok.
+- Some callbacks are optional, these are callbacks which take one parameter, the error. The library signifies here that the server's answer can only be either "OK" or an error message, there's no data. If you don't provide the library with a callback, it'll use the default callback:
+```js
+(err)=>{if (err) console.error(err);}
+```
 
 ## The nc Object
 - `NextCloud(<domain name>, <userid>, <password>, [https=true])`
