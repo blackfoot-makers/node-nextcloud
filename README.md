@@ -20,11 +20,12 @@ nc.users.add("toto", "awesomePassword!", (err) => {
 
 # Methods
 
-- When a callback has a `body` parameter, it is already a JS object, you don't need to parse the XML. It is the JS equivalent of the exact XML returned by the server, including the top-level "ocs" field. Note that the xml parsing library adds a few needless arrays for most responses.
-- Some callbacks are optional, these are callbacks which take one parameter, the error. The library signifies here that the server's answer can only be either "OK" or an error message, there's no data. If you don't provide the library with a callback, it'll use the default callback:
+- When a callback has a `body` parameter, it is already a JS object, you don't need to parse anything. It is the JS equivalent of the XML in the documentation, including the top-level "ocs" field.
+- Some callbacks are optional, these are callbacks which take one parameter, the error. The library signifies here that the server's answer can only be either "OK" or an error message, there's no data. If you don't provide the library with a callback, it'll use the default callback, printing any occuring error:
 ```js
-(err)=>{if (err) console.error(err);}
+defaultCallback = (err)=>{if (err) console.error(err);}
 ```
+The default callback can't be changed (yet).
 
 ## The nc Object
 - `NextCloud(<domain name>, <userid>, <password>, [https=true])`
@@ -63,7 +64,7 @@ nc.users.list(null, (err, body)=>{
         return;
     }
     // Prints the user list
-    console.log(body.ocs.data[0].users[0].element);
+    console.log(body.ocs.data.users);
 });
 
 // Get the three top users matching "tom"
@@ -73,7 +74,7 @@ nc.users.list({"search":"tom", "limit": 3}, (err, body)=> {
         return;
     }
     // body contains the server's response if err == null    
-    console.log(body.ocs.data[0].users[0].element);
+    console.log(body.ocs.data.users);
 });
 ```
 
