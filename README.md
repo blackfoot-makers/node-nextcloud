@@ -1,6 +1,5 @@
-# nextcloud
-`nextcloud` is a node wrapper for the [nextcloud API](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/user_provisioning_api.html). It's designed to be a lightweight and hassle-free experience.
-
+# node-nextcloud
+`node-nextcloud` is a node wrapper for the [nextcloud API](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/user_provisioning_api.html). It's designed to be a lightweight module and a hassle-free experience.
 ```js
 const NextCloud = require('nextcloud');
 var nc = NextCloud("mydomain.net", "username", "password");
@@ -202,5 +201,3 @@ This method, without any options, returns a list of all apps. Options is an obje
 
 # License
 This module was developed by [Blackfoot](https://blackfoot.io/) and is licensed under the MIT License.
-
-<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
