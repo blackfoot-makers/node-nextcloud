@@ -1,6 +1,6 @@
 {
   "name": "node-nextcloud",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A node package to interact with nextcloud applications",
   "main": "index.js",
   "scripts": {
