@@ -115,5 +115,17 @@ user.get((err, body)=>{
 user.delete(); // We don't have to provide a callback if we don't care to wait for the call to be done, nor care about the result being positive.
 ````
 
+- `getGroups(<userid>)`: Display all the groups this user is in.
+```js
+nc.users.getGroups("admin", (err, body) =>{
+    if (err) {
+        console.error("Error:");
+        console.error(err);
+        return;
+    }
+    console.log(body.ocs.data.groups);
+});
+```
+
 # Copyright
 This module was developed by [Blackfoot](https://blackfoot.io/) and is licensed under the MIT License.
