@@ -16,8 +16,7 @@ nc.users.add("toto", "awesomePassword!", (err, ocs) => {
         console.error(`Nextcloud error ${ocs.meta.statuscode}: ${ocs.meta.message}`);
     }
     else {
-        // User was created successfully. Edit a bunch of their info
-
+        console.log("User created!");   
     }
 }
 ~~~
