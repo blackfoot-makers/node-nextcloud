@@ -182,7 +182,7 @@ This method, without any options, returns a list of all groups. Options is an ob
 `delete(<groupid>, <callback(err, ocs)>)`
 
 ## Apps
-All these methods are accessed through the `nc.groups` object. These methods all match the API calls [here](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/instruction_set_for_apps.html).
+All these methods are accessed through the `nc.app` object. These methods all match the API calls [here](https://docs.nextcloud.com/server/13/admin_manual/configuration_user/instruction_set_for_apps.html).
 
 ### List Apps
 `list(<options>, <callback(err, ocs)>)`
