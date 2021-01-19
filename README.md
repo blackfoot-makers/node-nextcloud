@@ -17,7 +17,7 @@ nc.users.add("toto", "awesomePassword!", (err, ocs) => {
     else {
         console.log("User created!");   
     }
-}
+})
 ```
 
 **WARNING**: This module was developped as part of a larger project, which ended up not being completed. It has therefore *never run in production*. I've tested the `users` namespace fairly exhaustively, but not `groups` and `apps`. Please test it before using in production and make issues with any problems you encounter 💖
